@@ -19,6 +19,7 @@ const {
 interface Column {
   name: string
   type: string
+  length: string
   nullable: boolean
   keyType:
   | "primary"
@@ -239,7 +240,9 @@ function DatabaseTableWidget() {
               fontFamily="Fira Code"
               fontSize={18}
             >
-              {column.type}{column.nullable ? "?" : ""}
+              {column.type}
+              {column.length ? `(${column.length})` : ""}
+              {column.nullable ? "?" : ""}
             </Text>
           </AutoLayout>
         )

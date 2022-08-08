@@ -143,6 +143,7 @@
       <tr>
         <th>Name</th>
         <th>Type</th>
+        <th>Length/Value</th>
         <th>Index</th>
         <th>Nullable</th>
         <th></th>
@@ -201,6 +202,9 @@
           </select>
         </td>
         <td>
+          <input v-model="column.length" type="text" />
+        </td>
+        <td>
           <select v-model="column.keyType">
             <option value="primary">Primary</option>
             <option value="foreign">Foreign</option>
@@ -244,6 +248,7 @@
         this.columns.push({
           name: null,
           type: "int",
+          length: "",
           keyType: "normal",
           nullable: false,
         })
